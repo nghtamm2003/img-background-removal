@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles/tailwind.css" />
+        <title>npm test</title>
+    </head>
+    <body>
+        <h1 class="text-blue-700 text-center text-2xl uppercase font-bold">npm modules test</h1>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.css" integrity="sha512-7uSoC3grlnRktCWoO4LjHMjotq8gf9XDFQerPuaph+cqR7JC9XKGdvN+UwZMC14aAaBDItdRj3DcSDs4kMWUgg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.js" integrity="sha512-9e9rr82F9BPzG81+6UrwWLFj8ZLf59jnuIA/tIf8dEGoQVu7l5qvr02G/BiAabsFOYrIUTMslVN+iDYuszftVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <div id="dropZone" class="dz-clickable">
+            <form action="/file-upload" class="dropzone" id="my-great-dropzone">
+                <div class="dz-default dz-message"><button class="dz-button" type="button">Drop files here to upload</button></div>
+            </form>
+        </div>
+
+        <script type="module" src="scripts/dropzone-config.js"></script>
+    </body>
+</html>

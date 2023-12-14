@@ -1,0 +1,22 @@
+{
+  "name": "img-background-removal",
+  "version": "1.0.0",
+  "description": "* Trong thời đại công nghệ 4.0, đặc biệt là dạo gần đây với sự thịnh hành của công nghệ AI, chúng đã nhanh chóng trở thành một đề tài nóng hổi và hấp dẫn với cả người trong ngành IT lẫn các ngành khác. AI đã được áp dụng vào rất nhiều các lĩnh vực khác nhau, lợi có, hại có nhưng trên hết những lợi ích mà chúng giúp cho con người là không thể bỏ qua, tiêu biểu có thể kể tới như ChatGPT của OpenAI, GitHub Copilot, Google Bard hay Stable Diffusion,... Và trong ngành nhiếp ảnh hay thiết kế cũng không phải ngoại lệ, việc có 1 \"chú\" AI có khả năng xử lý hình ảnh và loại bỏ background một cách chính xác và nhanh chóng đã giúp cho những con người của cụ thể ngành nghề này cảm thấy dễ dàng hơn rất nhiều trong công việc và triệt để nâng cao năng suất công việc của bản thân.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "tailwindcss build src/stylés.css -o dist/style.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "tailwindcss": "^3.3.6"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.16",
+    "dropzone": "^5.9.3",
+    "postcss": "^8.4.32"
+  }
+}
