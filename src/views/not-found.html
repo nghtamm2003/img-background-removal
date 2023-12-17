@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="../styles/tailwind.css" />
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+        <!-- Title and Icon -->
+        <title>npm test</title>
+        <link rel="shortcut icon" type="image/png" href="" />
+    </head>
+    <body class="font-rethink text-black text-opacity-100">
+        <!-- Header -->
+        <header class="bg-white font-medium text-lg">
+            <nav class="flex justify-between items-center px-8 py-2 bg-white fixed lg:top-0 w-full shadow-lg z-[1000]">
+                <div>
+                    <a href="../index.html">
+                        <img class="w-36 lg:w-52" src="../images/img-bg-removal-icon.png" alt="img-background-removal" />
+                    </a>
+                </div>
+                <div class="navbar-items hidden lg:flex items-center absolute lg:static bg-white min-h-auto lg:min-h-fit left-0 top-[-100%] mt-[122.78px] lg:mt-0 w-full lg:w-auto p-10 lg:p-2 shadow-lg lg:shadow-none">
+                    <ul class="flex flex-col relative lg:flex-row lg:items-center lg:gap-20 gap-8">
+                        <li>
+                            <a class="text-black text-opacity-100 hover:text-opacity-60" href="remove-bg.html">Remove Background</a>
+                        </li>
+                        <li>
+                            <a class="text-black text-opacity-100 hover:text-opacity-60" href="not-found.html">How to use?</a>
+                        </li>
+                        <li>
+                            <a class="text-black text-opacity-100 hover:text-opacity-60" href="pricing.html">Pricing</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex items-center gap-6">
+                    <button class="bg-sky-400 hover:bg-opacity-80 px-5 py-2 rounded-full">Sign in</button>
+                    <i class="lucide-menu cursor-pointer lg:hidden" data-lucide="menu" onclick="onClickHamburger(this)"></i>
+                    <i class="lucide-x cursor-pointer hidden" data-lucide="x" onclick="onClickHamburger(this)"></i>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main style="background-image: url(../images/vectors/404-background.jpg); background-size: cover; background-position: center;">
+            <div class="flex h-full pt-[125px] md:pt-[140px] lg:pt-[170px]">
+                <div class="max-w-[50rem] flex flex-col mx-auto w-full h-full">
+                    <div class="mb-auto flex justify-center z-50 w-full py-4">
+                        <nav class="px-4" aria-label="Global">
+                            <a class="flex justify-center items-center font-semibold text-2xl md:text-4xl lg:text-5xl" href="../index.html" aria-label="Brand">Oopsie! Something's missing...</a>
+                        </nav>
+                    </div>
+
+                    <div class="text-center py-2 md:py-5 lg:py-8 px-4">
+                        <h1 class="block font-bold text-black text-[130px] md:text-[170px] lg:text-[200px]">404</h1>
+                        <p class="mt-3 font-regular text-gray-800 text-md md:text-xl">Oops! Something went wrong.</p>
+                        <p class="font-regular text-gray-800 text-md md:text-xl">Sorry, we couldn't find your page.</p>
+                        <div class="mt-5 flex flex-col justify-center items-center gap-2 sm:flex-row sm:gap-3">
+                            <a class="w-auto py-3 px-4 inline-flex justify-center items-center gap-x-2 text-base font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none" href="https://github.com/nghtamm2003/img-background-removal" target="_blank">
+                                <svg class="flex-shrink-0 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                                </svg>
+                                Get the source code
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="mt-auto text-center pt-10 pb-24">
+                        <div class="max-w-7xl mx-auto px-4">
+                            <p class="text-sm font-regular md:text-base text-gray-600">© Nhóm 14, lớp Thiết kế Web - 231IS19A01</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-white w-full py-12 px-4 mx-auto">
+            <div class="text-center border-t-[2px] border-gray-200">
+                <div class="flex justify-center items-center mt-6">
+                    <div class="max-w-fit">
+                        <a class="text-[48px] md:text-[56px] lg:text-[64px] font-bold text-black hover:text-opacity-80" href="https://github.com/nghtamm2003/img-background-removal">Nhóm 14</a>
+                    </div>
+                </div>
+                <div class="mt-2">
+                    <p class="font-regular text-lg">Chúng tôi là thành viên của Học viện Ngân hàng, đóng đô tại <a class="font-semibold text-blue-600 hover:text-blue-700" href="https://www.hvnh.edu.vn/">số 12 Chùa Bộc, Đống Đa, Hà Nội.</a></p>
+                </div>
+                <div class="flex flex-wrap justify-center mt-6">
+                    <div class="max-w-[300px] max-h-[400px] md:max-w-[600px] md:max-h-fit lg:max-w-fit border-4 border-gray-600 rounded-2xl">
+                        <iframe class="max-w-[250px] max-h-[350px] md:max-w-[550px] md:max-h-fit lg:max-w-[600px] rounded-xl" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.5884919834384!2d105.8262382759776!3d21.009126380635408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac800f450807%3A0x419a49bcd94b693a!2zSOG7jWMgVmnhu4duIE5nw6JuIEjDoG5n!5e0!3m2!1svi!2s!4v1702732206889!5m2!1svi!2s" width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <div class="flex flex-wrap justify-center items-center mt-14 gap-16">
+                    <a href="https://www.facebook.com/nghtamm2003" class="flex flex-col justify-center items-center">
+                        <img class="w-[150px] h-[150px] rounded-full border-[6px] border-slate-300 shadow-lg overflow-hidden hover:opacity-80 object-cover" src="../images/authors/Tâm.jpg" alt="Nguyễn Hoàng Tâm" />
+                        <p class="font-semibold mt-6">Nguyễn Hoàng Tâm</p>
+                        <p class="font-medium text-gray-500">Nhóm trưởng</p>
+                    </a>
+                    <a href="https://www.facebook.com/phngnh144" class="flex flex-col justify-center items-center">
+                        <img class="w-[150px] h-[150px] rounded-full border-[6px] border-slate-300 shadow-lg overflow-hidden hover:opacity-80 object-cover" src="../images/authors/Phương Anh.jpg" alt="Hà Phương Anh" />
+                        <p class="font-semibold mt-6">Hà Phương Anh</p>
+                        <p class="font-medium text-gray-500">Thành viên</p>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100019288065795" class="flex flex-col justify-center items-center">
+                        <img class="w-[150px] h-[150px] rounded-full border-[6px] border-slate-300 shadow-lg overflow-hidden hover:opacity-80 object-cover" src="../images/authors/Ánh.jpg" alt="Trần Ngọc Ánh" />
+                        <p class="font-semibold mt-6">Trần Ngọc Ánh</p>
+                        <p class="font-medium text-gray-500">Thành viên</p>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100010495417637" class="flex flex-col justify-center items-center">
+                        <img class="w-[150px] h-[150px] rounded-full border-[6px] border-slate-300 shadow-lg overflow-hidden hover:opacity-80 object-cover" src="../images/authors/Ngân.jpg" alt="Hà Thị Ngân" />
+                        <p class="font-semibold mt-6">Hà Thị Ngân</p>
+                        <p class="font-medium text-gray-500">Thành viên</p>
+                    </a>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Script -->
+        <script src="../../node_modules/preline/preline.js"></script>
+        <script src="https://unpkg.com/lucide@latest"></script>
+        <script>
+            lucide.createIcons();
+        </script>
+        <script src="../scripts/responsive.js"></script>
+    </body>
+</html>
