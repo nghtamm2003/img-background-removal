@@ -3706,6 +3706,18 @@ details.collapse summary::-webkit-details-marker {
   padding-top: 3rem;
 }
 
+.pt-36 {
+  padding-top: 9rem;
+}
+
+.pt-\[72px\] {
+  padding-top: 72px;
+}
+
+.pb-11 {
+  padding-bottom: 2.75rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -4765,6 +4777,14 @@ details.collapse summary::-webkit-details-marker {
 
   .lg\:pt-20 {
     padding-top: 5rem;
+  }
+
+  .lg\:pb-32 {
+    padding-bottom: 8rem;
+  }
+
+  .lg\:pb-10 {
+    padding-bottom: 2.5rem;
   }
 
   .lg\:text-center {
