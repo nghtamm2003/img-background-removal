@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="../styles/tailwind.css" />
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+        <!-- Title and Icon -->
+        <title>npm test</title>
+        <link rel="shortcut icon" type="image/png" href="" />
+    </head>
+    <body class="font-rethink text-black text-opacity-100">
+        <!-- Header -->
+        <header class="bg-white font-medium text-lg">
+            <nav class="flex justify-between items-center px-8 py-2 bg-white fixed lg:top-0 w-full shadow-lg z-[1000]">
+                <div>
+                    <a href="../index.html">
+                        <img class="w-36 lg:w-52" src="../images/img-bg-removal-icon.png" alt="img-background-removal" />
+                    </a>
+                </div>
+                <div class="navbar-items hidden lg:flex items-center absolute lg:static bg-white min-h-auto lg:min-h-fit left-0 top-[-100%] mt-[122.78px] lg:mt-0 w-full lg:w-auto p-10 lg:p-2 shadow-lg lg:shadow-none">
+                    <ul class="flex flex-col relative lg:flex-row lg:items-center lg:gap-20 gap-8">
+                        <li>
+                            <a class="text-black text-opacity-100 hover:text-opacity-60" href="remove-bg.html">Remove Background</a>
+                        </li>
+                        <li>
+                            <a class="text-black text-opacity-100 hover:text-opacity-60" href="not-found.html">How to use?</a>
+                        </li>
+                        <li>
+                            <a class="text-black text-opacity-100 hover:text-opacity-60" href="pricing.html">Pricing</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex items-center gap-6">
+                    <button class="bg-sky-400 hover:bg-opacity-80 px-5 py-2 rounded-full">Sign in</button>
+                    <i class="lucide-menu cursor-pointer lg:hidden" data-lucide="menu" onclick="onClickHamburger(this)"></i>
+                    <i class="lucide-x cursor-pointer hidden" data-lucide="x" onclick="onClickHamburger(this)"></i>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <div class="max-w-full" style="background-image: url(../images/elements/gradient-background.jpg); background-size: cover; background-repeat: no-repeat;">
+                <div class="max-w-[85rem] px-4 pb-[72px] pt-[110px] md:pt-28 lg:pt-36 mx-auto border-b-[2px] border-gray-200">
+                    <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-18">
+                        <h2 class="text-5xl font-bold md:text-6xl leading-[1.175] md:leading-tight">Subscriptions</h2>
+                        <p class="mt-1 text-sm md:text-base font-medium text-gray-700">Our plans offer full resolution images and more...</p>
+                    </div>
+                    <div class="flex justify-center items-center">
+                        <label class="min-w-[3.5rem] text-md font-regular text-gray-700 me-3">Monthly</label>
+                        <input type="checkbox" id="hs-basic-with-description" class="relative w-[3.25rem] h-7 p-px bg-gray-100 border-transparent text-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:ring-blue-600 disabled:opacity-50 disabled:pointer-events-none checked:bg-none checked:text-blue-600 checked:border-blue-600 focus:checked:border-blue-600 dark:bg-gray-600 dark:border-gray-600 before:inline-block before:w-6 before:h-6 before:bg-white checked:before:bg-white before:translate-x-0 checked:before:translate-x-full before:rounded-full before:shadow before:transform before:ring-0 before:transition before:ease-in-out before:duration-200" checked />
+                        <label class="relative min-w-[3.5rem] text-md font-regular text-gray-700 ms-3">
+                            Annual
+                            <span class="absolute -top-10 start-auto -end-24">
+                                <span class="flex items-center">
+                                    <svg class="w-14 h-8 -me-6" width="45" height="25" viewBox="0 0 45 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M43.2951 3.47877C43.8357 3.59191 44.3656 3.24541 44.4788 2.70484C44.5919 2.16427 44.2454 1.63433 43.7049 1.52119L43.2951 3.47877ZM4.63031 24.4936C4.90293 24.9739 5.51329 25.1423 5.99361 24.8697L13.8208 20.4272C14.3011 20.1546 14.4695 19.5443 14.1969 19.0639C13.9242 18.5836 13.3139 18.4152 12.8336 18.6879L5.87608 22.6367L1.92723 15.6792C1.65462 15.1989 1.04426 15.0305 0.563943 15.3031C0.0836291 15.5757 -0.0847477 16.1861 0.187863 16.6664L4.63031 24.4936ZM43.7049 1.52119C32.7389 -0.77401 23.9595 0.99522 17.3905 5.28788C10.8356 9.57127 6.58742 16.2977 4.53601 23.7341L6.46399 24.2659C8.41258 17.2023 12.4144 10.9287 18.4845 6.96211C24.5405 3.00476 32.7611 1.27399 43.2951 3.47877L43.7049 1.52119Z" fill="currentColor" class="fill-gray-300 dark:fill-gray-700" />
+                                    </svg>
+                                    <span class="mt-3 inline-block whitespace-nowrap text-[11px] leading-5 font-semibold tracking-wide uppercase bg-blue-600 text-white rounded-full py-1 px-2.5">Save up to 10%</span>
+                                </span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:items-center">
+                        <div class="flex flex-col border border-gray-200 text-center rounded-xl p-8 shadow-lg bg-white">
+                            <h4 class="font-medium text-xl text-gray-800">Individuals</h4>
+                            <span class="mt-7 font-bold text-6xl text-gray-800">Free</span>
+                            <p class="mt-2 text-md text-gray-600">for a Lifetime</p>
+                            <ul class="mt-7 space-y-2.5 text-sm">
+                                <li class="flex space-x-2">
+                                    <svg class="flex-shrink-0 mt-0.5 h-4 w-4 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                                    <span class="text-gray-800"> Unlimited free previews </span>
+                                </li>
+                                <li class="flex space-x-2">
+                                    <svg class="flex-shrink-0 mt-0.5 h-4 w-4 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                                    <span class="text-gray-800"> 50 free previews via API/ month </span>
+                                </li>
+                                <li class="flex space-x-2">
+                                    <svg class="flex-shrink-0 mt-0.5 h-4 w-4 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                                    <span class="text-gray-800"> img-bg-removal for Windows </span>
+                                </li>
+                            </ul>
+                            <a class="mt-5 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-md font-semibold rounded-lg border border-transparent bg-blue-100 text-blue-800 hover:bg-blue-200 disabled:opacity-50 disabled:pointer-events-none" href="not-found.html"> Sign up </a>
+                        </div>
+                        <div class="flex flex-col border-[3.5px] border-blue-600 text-center shadow-xl rounded-xl p-8 bg-white">
+                            <p class="mb-3"><span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-lg text-sm uppercase font-semibold bg-blue-100 text-blue-800">Most popular</span></p>
+                            <h4 class="font-medium text-xl text-gray-800">Startup</h4>
+                            <span class="mt-5 font-bold text-6xl text-gray-800">
+                                <span class="font-bold text-3xl -me-2">$</span>
+                                39
+                            </span>
+                            <p class="mt-2 text-md text-gray-600">All the basics for starting a new business</p>
+                            <ul class="mt-7 space-y-2.5 text-sm">
+                                <li class="flex space-x-2">
+                                    <svg class="flex-shrink-0 mt-0.5 h-4 w-4 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                                    <span class="text-gray-800"> Up to 5000 credits/ month </span>
+                                </li>
+                                <li class="flex space-x-2">
+                                    <svg class="flex-shrink-0 mt-0.5 h-4 w-4 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                                    <span class="text-gray-800"> Previous plan features </span>
+                                </li>
+                                <li class="flex space-x-2">
+                                    <svg class="flex-shrink-0 mt-0.5 h-4 w-4 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                                    <span class="text-gray-800"> Cancel anytime </span>
+                                </li>
+                            </ul>
+                            <a class="mt-5 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-md font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none" href="not-found.html"> Sign up </a>
+                        </div>
+                        <div class="flex flex-col border border-gray-200 text-center rounded-xl p-8 shadow-lg bg-white">
+                            <h4 class="font-medium text-xl text-gray-800">Teams</h4>
+                            <span class="mt-5 font-bold text-6xl text-gray-800">
+                                <span class="font-bold text-3xl -me-2">$</span>
+                                89
+                            </span>
+                            <p class="mt-2 text-md text-gray-600">Everything you need for a growing business</p>
+                            <ul class="mt-7 space-y-2.5 text-sm">
+                                <li class="flex space-x-2">
+                                    <svg class="flex-shrink-0 mt-0.5 h-4 w-4 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                                    <span class="text-gray-800"> Up to 25000 credits/ month </span>
+                                </li>
+                                <li class="flex space-x-2">
+                                    <svg class="flex-shrink-0 mt-0.5 h-4 w-4 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                                    <span class="text-gray-800"> Previous plan features </span>
+                                </li>
+                                <li class="flex space-x-2">
+                                    <svg class="flex-shrink-0 mt-0.5 h-4 w-4 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                                    <span class="text-gray-800"> Cancel anytime </span>
+                                </li>
+                            </ul>
+                            <a class="mt-5 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-md font-semibold rounded-lg border border-transparent bg-blue-100 text-blue-800 hover:bg-blue-200 disabled:opacity-50 disabled:pointer-events-none" href="not-found.html"> Sign up </a>
+                        </div>
+                        <div class="flex flex-col border border-gray-200 text-center rounded-xl p-8 shadow-lg bg-white">
+                            <h4 class="font-medium text-xl text-gray-800">Enterprises</h4>
+                            <span class="mt-5 font-bold text-6xl text-gray-800">
+                                <span class="font-bold text-3xl -me-2">$</span>
+                                149
+                            </span>
+                            <p class="mt-2 text-md text-gray-600">Advanced features for scaling your business</p>
+                            <ul class="mt-7 space-y-2.5 text-sm">
+                                <li class="flex space-x-2">
+                                    <svg class="flex-shrink-0 mt-0.5 h-4 w-4 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                                    <span class="text-gray-800"> Up to 75000 credits/ month </span>
+                                </li>
+                                <li class="flex space-x-2">
+                                    <svg class="flex-shrink-0 mt-0.5 h-4 w-4 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                                    <span class="text-gray-800"> Pay as you go for credits </span>
+                                </li>
+                                <li class="flex space-x-2">
+                                    <svg class="flex-shrink-0 mt-0.5 h-4 w-4 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                                    <span class="text-gray-800"> Unlock all the features </span>
+                                </li>
+                            </ul>
+                            <a class="mt-5 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-md font-semibold rounded-lg border border-transparent bg-blue-100 text-blue-800 hover:bg-blue-200 disabled:opacity-50 disabled:pointer-events-none" href="not-found.html"> Sign up </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="max-w-[85rem] px-4 pb-4 pt-16 md:pb-8 md:pt-[72px] lg:pt-20 sm:px-6 lg:px-8 mx-auto">
+                <div class="max-w-4xl mx-auto text-center mb-12 md:mb-14 lg:mb-16">
+                    <h2 class="text-5xl font-bold md:text-6xl">Frequently Asked Questions</h2>
+                </div>
+                <div class="max-w-6xl mx-auto">
+                    <div class="hs-accordion-group">
+                        <div class="hs-accordion hs-accordion-active:bg-gray-100 rounded-xl p-6 active" id="hs-basic-with-title-and-arrow-stretched-heading-one">
+                            <button class="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full text-lg md:text-2xl font-semibold text-start text-gray-800 rounded-lg transition hover:text-gray-600" aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-one">
+                                Should I get Pay-as-you-go credits or a subscription?
+                                <svg class="hs-accordion-active:hidden block flex-shrink-0 w-5 h-5 text-gray-800 group-hover:text-gray-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6" /></svg>
+                                <svg class="hs-accordion-active:block hidden flex-shrink-0 w-5 h-5 text-gray-800 group-hover:text-gray-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6" /></svg>
+                            </button>
+                            <div id="hs-basic-with-title-and-arrow-stretched-collapse-one" class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300" aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-one">
+                                <p class="text-black text-base md:text-xl font-regular">For one-off or hard-to-predict image needs, pay as you go credits are a great option. <br /><br />For larger or ongoing image needs, you'll save on every photo that you process with a subscription. With monthly plans starting at just 40 images per month and rollover of any unused credits (up to 5×) you'll benefit from huge savings without making a huge commitment.</p>
+                            </div>
+                        </div>
+                        <div class="hs-accordion hs-accordion-active:bg-gray-100 rounded-xl p-6" id="hs-basic-with-title-and-arrow-stretched-heading-two">
+                            <button class="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full text-lg md:text-2xl font-semibold text-start text-gray-800 rounded-lg transition hover:text-gray-600" aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-two">
+                                What are credits?
+                                <svg class="hs-accordion-active:hidden block flex-shrink-0 w-5 h-5 text-gray-800 group-hover:text-gray-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6" /></svg>
+                                <svg class="hs-accordion-active:block hidden flex-shrink-0 w-5 h-5 text-gray-800 group-hover:text-gray-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6" /></svg>
+                            </button>
+                            <div id="hs-basic-with-title-and-arrow-stretched-collapse-two" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-two">
+                                <p class="text-black text-base md:text-xl font-regular">Credits enable you to use img-bg-removal for full-resolution cutouts in high quality. You can use credits on img-bg-removal, via the remove.bg API, in our Windows/ Mac/ Linux app or Photoshop Extension. <br /><br />Removing the background from <b>1 image requires 1 credit.</b> Preview images are free on img-bgremoval and ¼ credit via the img-bg-removal apps (e.g. Desktop app, Photoshop plugin, or Figma plugin) and the API. <br /><br />Subscriptions include a monthly budget of credits, that you can use within that month (or roll over to the next month as long as you stay subscribed). Pay-as-you-go credits are valid for up to 2 years after the purchase.</p>
+                            </div>
+                        </div>
+                        <div class="hs-accordion hs-accordion-active:bg-gray-100 rounded-xl p-6" id="hs-basic-with-title-and-arrow-stretched-heading-three">
+                            <button class="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full text-lg md:text-2xl font-semibold text-start text-gray-800 rounded-lg transition hover:text-gray-600" aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-three">
+                                What images are supported?
+                                <svg class="hs-accordion-active:hidden block flex-shrink-0 w-5 h-5 text-gray-800 group-hover:text-gray-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6" /></svg>
+                                <svg class="hs-accordion-active:block hidden flex-shrink-0 w-5 h-5 text-gray-800 group-hover:text-gray-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6" /></svg>
+                            </button>
+                            <div id="hs-basic-with-title-and-arrow-stretched-collapse-three" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-three">
+                                <p class="text-black text-base md:text-xl font-regular">You can upload any <b>JPG or PNG image</b> with up to <b>12 megabytes.</b> Images must have a subject that is clearly meant to be the foreground, such as a person, animal, product or car. If the image resolution is larger than <b>25 megapixels</b> (e.g. 6250 × 4000 pixels or any other aspect ratio) it is resized to this maximum resolution.</p>
+                            </div>
+                        </div>
+                        <div class="hs-accordion hs-accordion-active:bg-gray-100 rounded-xl p-6" id="hs-basic-with-title-and-arrow-stretched-heading-four">
+                            <button class="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full text-lg md:text-2xl font-semibold text-start text-gray-800 rounded-lg transition hover:text-gray-600" aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-four">
+                                What if I am unsatisfied with the results?
+                                <svg class="hs-accordion-active:hidden block flex-shrink-0 w-5 h-5 text-gray-800 group-hover:text-gray-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6" /></svg>
+                                <svg class="hs-accordion-active:block hidden flex-shrink-0 w-5 h-5 text-gray-800 group-hover:text-gray-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6" /></svg>
+                            </button>
+                            <div id="hs-basic-with-title-and-arrow-stretched-collapse-four" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-four">
+                                <p class="text-black text-base md:text-xl font-regular">
+                                    At the moment remove.bg works very well for photos of persons, products and cars, but some images are more challenging than others. We recommend <b>uploading a few images to the <a class="text-blue-500 hover:text-blue-700" href="remove-bg.html">free version</a></b> to get an impression of the quality level for your specific images. You can also try <b>1 image for free</b> by <a class="text-blue-500 hover:text-blue-700" href="sign-up.html">signing up.</a> <br /><br />All subscriptions are covered by a <b>14 Day Money Back Guarantee</b>: You get a full refund within 14 days if you are unsatisfied with the results (restricted to 50 downloads). Have a look at our <a class="text-blue-500 hover:text-blue-700" href="not-found.html">Refund Policy.</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="hs-accordion hs-accordion-active:bg-gray-100 rounded-xl p-6" id="hs-basic-with-title-and-arrow-stretched-heading-five">
+                            <button class="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full text-lg md:text-2xl font-semibold text-start text-gray-800 rounded-lg transition hover:text-gray-600" aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-five">
+                                What happens if I don't use all my subscription credits each month?
+                                <svg class="hs-accordion-active:hidden block flex-shrink-0 w-5 h-5 text-gray-800 group-hover:text-gray-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6" /></svg>
+                                <svg class="hs-accordion-active:block hidden flex-shrink-0 w-5 h-5 text-gray-800 group-hover:text-gray-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6" /></svg>
+                            </button>
+                            <div id="hs-basic-with-title-and-arrow-stretched-collapse-five" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-five">
+                                <p class="text-black text-base md:text-xl font-regular">If at the end of the month you have not used all of your subscription credits, the remaining credits roll over to the next month - so you can still use them. <br /><br />You can roll over up to 5 × your monthly credit budget. For instance, if you are subscribed to the <em>500 credits/ month</em> plan, you get 500 credits each month and on top of that you can roll over up to 2,500 credits from previous months.</p>
+                            </div>
+                        </div>
+                        <div class="hs-accordion hs-accordion-active:bg-gray-100 rounded-xl p-6" id="hs-basic-with-title-and-arrow-stretched-heading-six">
+                            <button class="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full text-lg md:text-2xl font-semibold text-start text-gray-800 rounded-lg transition hover:text-gray-600" aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-six">
+                                What payment methods do you support?
+                                <svg class="hs-accordion-active:hidden block flex-shrink-0 w-5 h-5 text-gray-800 group-hover:text-gray-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6" /></svg>
+                                <svg class="hs-accordion-active:block hidden flex-shrink-0 w-5 h-5 text-gray-800 group-hover:text-gray-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6" /></svg>
+                            </button>
+                            <div id="hs-basic-with-title-and-arrow-stretched-collapse-six" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-six">
+                                <p class="text-black text-base md:text-xl font-regular">We support all major Credit Cards, PayPal and Apple Pay.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-white w-full py-12 px-4 mx-auto">
+            <div class="text-center border-t-[2px] border-gray-200">
+                <div class="flex justify-center items-center mt-6">
+                    <div class="max-w-fit">
+                        <a class="text-[48px] md:text-[56px] lg:text-[64px] font-bold text-black hover:text-opacity-80" href="https://github.com/nghtamm2003/img-background-removal">Nhóm 14</a>
+                    </div>
+                </div>
+                <div class="mt-2">
+                    <p class="font-regular text-lg">Chúng tôi là thành viên của Học viện Ngân hàng, đóng đô tại <a class="font-semibold text-blue-500 hover:text-blue-700" href="https://www.hvnh.edu.vn/">số 12 Chùa Bộc, Đống Đa, Hà Nội.</a></p>
+                </div>
+                <div class="flex flex-wrap justify-center mt-6">
+                    <div class="max-w-[300px] max-h-[400px] md:max-w-[600px] md:max-h-fit lg:max-w-fit border-4 border-gray-600 rounded-2xl">
+                        <iframe class="max-w-[250px] max-h-[350px] md:max-w-[550px] md:max-h-fit lg:max-w-[600px] rounded-xl" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.5884919834384!2d105.8262382759776!3d21.009126380635408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac800f450807%3A0x419a49bcd94b693a!2zSOG7jWMgVmnhu4duIE5nw6JuIEjDoG5n!5e0!3m2!1svi!2s!4v1702732206889!5m2!1svi!2s" width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <div class="flex flex-wrap justify-center items-center mt-14 gap-16">
+                    <a href="https://www.facebook.com/nghtamm2003" class="flex flex-col justify-center items-center">
+                        <img class="w-[150px] h-[150px] rounded-full border-[6px] border-slate-300 shadow-lg overflow-hidden hover:opacity-80 object-cover" src="../images/authors/Tâm.jpg" alt="Nguyễn Hoàng Tâm" />
+                        <p class="font-semibold mt-6">Nguyễn Hoàng Tâm</p>
+                        <p class="font-medium text-gray-500">Nhóm trưởng</p>
+                    </a>
+                    <a href="https://www.facebook.com/phngnh144" class="flex flex-col justify-center items-center">
+                        <img class="w-[150px] h-[150px] rounded-full border-[6px] border-slate-300 shadow-lg overflow-hidden hover:opacity-80 object-cover" src="../images/authors/Phương Anh.jpg" alt="Hà Phương Anh" />
+                        <p class="font-semibold mt-6">Hà Phương Anh</p>
+                        <p class="font-medium text-gray-500">Thành viên</p>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100019288065795" class="flex flex-col justify-center items-center">
+                        <img class="w-[150px] h-[150px] rounded-full border-[6px] border-slate-300 shadow-lg overflow-hidden hover:opacity-80 object-cover" src="../images/authors/Ánh.jpg" alt="Trần Ngọc Ánh" />
+                        <p class="font-semibold mt-6">Trần Ngọc Ánh</p>
+                        <p class="font-medium text-gray-500">Thành viên</p>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100010495417637" class="flex flex-col justify-center items-center">
+                        <img class="w-[150px] h-[150px] rounded-full border-[6px] border-slate-300 shadow-lg overflow-hidden hover:opacity-80 object-cover" src="../images/authors/Ngân.jpg" alt="Hà Thị Ngân" />
+                        <p class="font-semibold mt-6">Hà Thị Ngân</p>
+                        <p class="font-medium text-gray-500">Thành viên</p>
+                    </a>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Script -->
+        <script src="../../node_modules/preline/preline.js"></script>
+        <script src="https://unpkg.com/lucide@latest"></script>
+        <script>
+            lucide.createIcons();
+        </script>
+        <script src="../scripts/responsive.js"></script>
+    </body>
+</html>
