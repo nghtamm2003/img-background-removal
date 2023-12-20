@@ -6,6 +6,7 @@
 
         <!-- CSS -->
         <link rel="stylesheet" href="../styles/tailwind.css" />
+        <link rel="stylesheet" href="../styles/loading-screen.css" />
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,6 +18,9 @@
         <link rel="shortcut icon" type="image/png" href="" />
     </head>
     <body class="font-rethink text-black text-opacity-100">
+        <!-- Loader -->
+        <div class="loader loader--hidden"></div>
+
         <!-- Header -->
         <header class="bg-white font-medium text-lg">
             <nav class="flex justify-between items-center px-8 py-2 bg-white fixed lg:top-0 w-full shadow-lg z-[1000]">
@@ -47,7 +51,37 @@
         </header>
 
         <!-- Main Content -->
-        <main></main>
+        <main>
+            <div class="text-md md:text-lg breadcrumbs pt-24 lg:pt-28 pl-10 px-6">
+                <ul>
+                    <li><a class="text-black text-opacity-100 hover:text-opacity-80" href="../index.html">Home</a></li>
+                    <li><b>Remove Background</b></li>
+                </ul>
+            </div>
+            <div class="max-w-full max-h-full text-center py-14 px-6">
+                <div class="flex flex-col justify-center items-center">
+                    <h1 class="text-[42px] leading-[1.05] md:text-5xl font-bold mb-8">Upload an <span class="text-amber-500">image</span> to <span class="text-blue-400">remove the background</span></h1>
+                    <div class="dropzone max-w-sm md:max-w-5xl border-2 border-dashed border-black rounded-xl">
+                        <div class="flex flex-col justify-center items-center px-16 py-20 md:px-64 md:py-28">
+                            <img class="max-w-[8vw] max-h-[8vw]" src="../images/elements/upload-vector.png" alt="Upload" />
+                            <p class="droptext font-semibold text-2xl">Drag & Drop to Upload Image</p>
+                            <p class="font-semibold text-2xl mt-2">OR</p>
+                            <button class="btn text-lg md:text-2xl mt-3">Browse Images</button>
+                            <input class="hidden" type="file" />
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row justify-center items-center gap-4 mt-12">
+                        <button class="retry-button btn btn-error flex flex-row justify-center items-center min-w-[220px] md:min-w-fit">
+                            <i data-lucide="trash-2"></i>
+                            <p class="text-xl">Retry</p>
+                        </button>
+                        <button class="remove-button btn btn-accent text-xl min-w-[220px] md:min-w-fit">Remove Background</button>
+                        <button class="download-button btn btn-outline btn-accent text-xl min-w-[220px] md:min-w-fit hidden"><a id="download-img" download="background-removed">Download</a></button>
+                        <button class="save-button btn btn-outline btn-accent text-xl min-w-[220px] md:min-w-fit hidden">Save to Gallery</button>
+                    </div>
+                </div>
+            </div>
+        </main>
 
         <!-- Footer -->
         <footer class="bg-white w-full py-12 px-4 mx-auto">
@@ -97,5 +131,6 @@
             lucide.createIcons();
         </script>
         <script src="../scripts/responsive.js"></script>
+        <script src="../scripts/dropzone.js"></script>
     </body>
 </html>
