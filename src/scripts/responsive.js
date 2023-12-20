@@ -1,3 +1,5 @@
+"use strict";
+
 let isHamburgerOpen = false;
 
 // Handle hamburger khi chuyển qua lại giữa các kích thước màn hình

@@ -1,12 +1,14 @@
+"use strict";
+
 // Khai báo các biến
 let file;
 let fileReader = new FileReader();
 let formData = new FormData();
 
-const dropzone = document.querySelector(".dropzone");
-droptext = dropzone.querySelector(".droptext");
-button = dropzone.querySelector("button");
-input = dropzone.querySelector("input");
+let dropzone = document.querySelector(".dropzone");
+let droptext = dropzone.querySelector(".droptext");
+let button = dropzone.querySelector("button");
+let input = dropzone.querySelector("input");
 
 const API_URL = "https://api.remove.bg/v1.0/removebg";
 const API_KEY = "J5dHJCP2Yu9bokrx8B1tXptr";
