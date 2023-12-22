@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "npx tailwindcss -i tailwind.css -o ./src/styles/tailwind.css --watch"
+    "css": "npx tailwindcss -i tailwind.css -o ./src/styles/tailwind.css --watch"
   },
   "keywords": [],
   "author": "",
