@@ -172,11 +172,13 @@ onAuthStateChanged(auth, (user) => {
         showUserGreeting(userGreetings, user);
         if (beforeSignIn && afterSignIn) {
             beforeSignIn.classList.add("hidden");
+            afterSignIn.classList.add("inline-flex");
             afterSignIn.classList.remove("hidden");
         }
     } else {
         if (beforeSignIn && afterSignIn) {
             beforeSignIn.classList.remove("hidden");
+            afterSignIn.classList.remove("inline-flex");
             afterSignIn.classList.add("hidden");
         }
     }
