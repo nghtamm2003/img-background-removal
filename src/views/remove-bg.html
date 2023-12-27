@@ -43,8 +43,27 @@
                         </li>
                     </ul>
                 </div>
-                <div class="flex items-center gap-6">
+                <div id="before-sign-in" class="flex items-center gap-6">
                     <button class="bg-sky-400 hover:bg-opacity-80 px-5 py-2 rounded-full"><a href="sign-up.html">Sign up</a></button>
+                    <i class="lucide-menu cursor-pointer lg:hidden" data-lucide="menu" onclick="onClickHamburger(this)"></i>
+                    <i class="lucide-x cursor-pointer hidden" data-lucide="x" onclick="onClickHamburger(this)"></i>
+                </div>
+                <div id="after-sign-in" class="hs-dropdown relative flex-row justify-center items-center gap-6 hidden">
+                    <button id="hs-dropdown-custom-trigger" type="button" class="hs-dropdown-toggle py-1 ps-1 pe-2 inline-flex items-center gap-x-2 md:gap-x-4 font-semibold rounded-full border border-gray-300 bg-white text-black shadow-sm hover:bg-gray-50">
+                        <img class="w-8 h-auto rounded-full" src="../images/elements/default-profile-picture.png" alt="Default Profile Picture" />
+                        <span class="user-greetings text-gray-600 font-medium truncate max-w-[8rem]"></span>
+                        <svg class="hs-dropdown-open:rotate-180 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6" /></svg>
+                    </button>
+                    <div class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-[12.5rem] bg-white shadow-2xl rounded-lg p-2 mt-2" aria-labelledby="hs-dropdown-custom-trigger">
+                        <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-black hover:bg-gray-100 focus:outline-none focus:bg-gray-100" href="../views/dashboard.html">
+                            <i data-lucide="users"></i>
+                            <p>My profile</p>
+                        </a>
+                        <a class="sign-out-button flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-black hover:bg-gray-100 focus:outline-none focus:bg-gray-100" href="#">
+                            <i data-lucide="log-out"></i>
+                            <p>Sign out</p>
+                        </a>
+                    </div>
                     <i class="lucide-menu cursor-pointer lg:hidden" data-lucide="menu" onclick="onClickHamburger(this)"></i>
                     <i class="lucide-x cursor-pointer hidden" data-lucide="x" onclick="onClickHamburger(this)"></i>
                 </div>
@@ -133,5 +152,6 @@
         </script>
         <script src="../scripts/responsive.js"></script>
         <script src="../scripts/dropzone.js"></script>
+        <script type="module" src="../scripts/firebase-auth.bundle.js"></script>        
     </body>
 </html>

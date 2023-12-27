@@ -31,7 +31,7 @@ function retrieveImages() {
         };
         fileReader.readAsDataURL(file);
     } else {
-        window.alert("It must be an image!");
+        window.alert("Tập tin upload phải là hình ảnh!");
     }
 }
 
