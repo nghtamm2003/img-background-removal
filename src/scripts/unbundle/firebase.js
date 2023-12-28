@@ -15,10 +15,12 @@ const firebaseConfig = {
     measurementId: "G-XYGK4GKSV2",
 };
 
+// Khởi tạo biến cho Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
+// Khai báo các biến
 const googleButton = document.getElementById("google");
 
 const emailSignUp = document.getElementById("email-sign-up");
@@ -36,6 +38,7 @@ const beforeSignIn = document.getElementById("before-sign-in");
 const afterSignIn = document.getElementById("after-sign-in");
 const userGreetings = document.getElementsByClassName("user-greetings");
 
+// Handle event click vào nút đăng ký
 if (signUpButton) {
     signUpButton.addEventListener("click", (e) => {
         e.preventDefault();
@@ -43,6 +46,7 @@ if (signUpButton) {
     });
 }
 
+// Handle event click vào nút đăng nhập
 if (signInButton) {
     signInButton.addEventListener("click", (e) => {
         e.preventDefault();
@@ -50,6 +54,7 @@ if (signInButton) {
     });
 }
 
+// Handle event click vào nút đăng nhập bằng Google
 if (googleButton) {
     googleButton.addEventListener("click", (e) => {
         e.preventDefault();
@@ -57,6 +62,7 @@ if (googleButton) {
     });
 }
 
+// Handle event click vào nút đăng xuất
 if (signOutButton) {
     Array.from(signOutButton).forEach((button) => {
         button.addEventListener("click", (e) => {
@@ -66,6 +72,7 @@ if (signOutButton) {
     });
 }
 
+// Thực hiện đăng ký bằng email và password
 function authCreateAccountWithEmail() {
     const email = emailSignUp.value;
     const password = passwordSignUp.value;
@@ -100,6 +107,7 @@ function authCreateAccountWithEmail() {
         });
 }
 
+// Lấy dữ liệu tên user
 function authDisplayName() {
     const newDisplayName = displayName.value;
 
@@ -114,6 +122,7 @@ function authDisplayName() {
         });
 }
 
+// Thực hiện đăng nhập bằng email và password
 function authSignInWithEmail() {
     const email = emailSignIn.value;
     const password = passwordSignIn.value;
@@ -141,6 +150,7 @@ function authSignInWithEmail() {
         });
 }
 
+// Thực hiện đăng nhập thông qua tài khoản Google được pop-up
 function authSignInWithGoogle() {
     signInWithPopup(auth, provider)
         .then((result) => {
@@ -152,6 +162,7 @@ function authSignInWithGoogle() {
         });
 }
 
+// Thực hiện đăng xuất tài khoản
 function authSignOut() {
     signOut(auth)
         .then(() => {
@@ -167,6 +178,7 @@ function authSignOut() {
         });
 }
 
+// Kiểm tra state của tài khoản (logged-in hay logged-out)
 onAuthStateChanged(auth, (user) => {
     if (user) {
         showUserGreeting(userGreetings, user);
@@ -184,6 +196,7 @@ onAuthStateChanged(auth, (user) => {
     }
 });
 
+// Hiển thị tên user lên auth-dropdown-menu và profile-dashboard
 function showUserGreeting(userGreetings, user) {
     const displayName = user.displayName;
     if (displayName) {

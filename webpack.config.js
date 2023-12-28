@@ -5,10 +5,13 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const config = {
-    entry: "./src/index.js",
+    entry: {
+        firebase: "./src/scripts/unbundle/firebase.js",
+        dropzone: "./src/scripts/unbundle/dropzone.js",
+    },
     output: {
         path: resolve(__dirname, "./src/scripts"),
-        filename: "firebase-auth.bundle.js",
+        filename: "[name].bundle.js",
     },
     devtool: "eval-source-map",
 };
