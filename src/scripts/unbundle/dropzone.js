@@ -114,6 +114,20 @@ input.addEventListener("change", function () {
     retrieveImages();
 });
 
+// Hàm debounce
+function debounce(func, ms) {
+    let timer;
+    return function () {
+        const args = arguments;
+        const context = this;
+
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(() => {
+            func.apply(context, args);
+        }, ms);
+    };
+}
+
 // Thực hiện xóa background ảnh
 removeButton.addEventListener("click", () => {
     // Xử lý loader khi nhấn nút Remove Background
@@ -145,27 +159,30 @@ removeButton.addEventListener("click", () => {
                 downloadImage.setAttribute("href", fileReader.result);
 
                 // Handle event click vào nút Save to Gallery
-                saveButton.addEventListener("click", async () => {
-                    // Kiểm tra state và khởi tạo userID, storageRef (nếu state là logged-in)
-                    const user = await getCurrentUID(auth);
-                    if (user) {
-                        // Lấy thông về tên file ảnh sau khi xóa nền
-                        const fileExtension = file.name.split(".").pop();
-                        let fileType = file.type;
-                        const newFile = new File([blob], `${newName}.${fileExtension}`, { type: fileType });
+                saveButton.addEventListener(
+                    "click",
+                    debounce(async () => {
+                        // Kiểm tra state và khởi tạo userID, storageRef (nếu state là logged-in)
+                        const user = await getCurrentUID(auth);
+                        if (user) {
+                            // Lấy thông về tên file ảnh sau khi xóa nền
+                            const fileExtension = file.name.split(".").pop();
+                            let fileType = file.type;
+                            const newFile = new File([blob], `${newName}.${fileExtension}`, { type: fileType });
 
-                        // Khởi tạo userID và storageRef
-                        const userID = user.uid;
-                        const storageRef = ref(storage, `${userID}/${newFile.name}`);
+                            // Khởi tạo userID và storageRef
+                            const userID = user.uid;
+                            const storageRef = ref(storage, `${userID}/${newFile.name}`);
 
-                        // Upload ảnh lên Firebase Cloud Storage
-                        uploadBytes(storageRef, newFile).then((snapshot) => {
-                            window.alert("Đã lưu ảnh vào bộ sưu tập cá nhân!");
-                        });
-                    } else {
-                        window.alert("Bạn phải đăng nhập để sử dụng tính năng này!");
-                    }
-                });
+                            // Upload ảnh lên Firebase Cloud Storage
+                            uploadBytes(storageRef, newFile).then((snapshot) => {
+                                window.alert("Đã lưu ảnh vào bộ sưu tập cá nhân!");
+                            });
+                        } else {
+                            window.alert("Bạn phải đăng nhập để sử dụng tính năng này!");
+                        }
+                    }, 5000)
+                );
             };
         });
 });
