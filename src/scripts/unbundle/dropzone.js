@@ -40,6 +40,18 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const storage = getStorage(app);
 
+// Set luật cho Firebase Cloud Storage (Firebase > Storage > Rules)
+/* START
+rules_version = '2';
+service firebase.storage {
+    match /b/{bucket}/o {
+        match /{userId}/{allPaths=**} {
+            allow read, write: if request.auth != null && request.auth.uid == userId;
+        }
+    }
+}
+END */
+
 // Hàm khởi tạo một Promise để kiểm tra state của tài khoản (logged-in hay logged-out)
 function getCurrentUID(auth) {
     return new Promise((resolve, reject) => {
