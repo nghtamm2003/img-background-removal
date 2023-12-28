@@ -21,22 +21,22 @@ const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
 // Khai báo các biến
-const googleButton = document.getElementById("google");
+let googleButton = document.getElementById("google");
 
-const emailSignUp = document.getElementById("email-sign-up");
-const passwordSignUp = document.getElementById("password-sign-up");
-const displayName = document.getElementById("name-sign-up");
-const signUpButton = document.getElementById("sign-up-button");
+let emailSignUp = document.getElementById("email-sign-up");
+let passwordSignUp = document.getElementById("password-sign-up");
+let displayName = document.getElementById("name-sign-up");
+let signUpButton = document.getElementById("sign-up-button");
 
-const emailSignIn = document.getElementById("email-sign-in");
-const passwordSignIn = document.getElementById("password-sign-in");
-const signInButton = document.getElementById("sign-in-button");
+let emailSignIn = document.getElementById("email-sign-in");
+let passwordSignIn = document.getElementById("password-sign-in");
+let signInButton = document.getElementById("sign-in-button");
 
-const signOutButton = document.getElementsByClassName("sign-out-button");
+let signOutButton = document.getElementsByClassName("sign-out-button");
 
-const beforeSignIn = document.getElementById("before-sign-in");
-const afterSignIn = document.getElementById("after-sign-in");
-const userGreetings = document.getElementsByClassName("user-greetings");
+let beforeSignIn = document.getElementById("before-sign-in");
+let afterSignIn = document.getElementById("after-sign-in");
+let userGreetings = document.getElementsByClassName("user-greetings");
 
 // Handle event click vào nút đăng ký
 if (signUpButton) {

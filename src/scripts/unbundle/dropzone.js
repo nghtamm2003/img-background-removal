@@ -22,7 +22,7 @@ let saveButton = document.querySelector(".save-button");
 // Import Firebase vào dự án
 import { initializeApp } from "firebase/app";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { getStorage } from "firebase/storage";
+import { getStorage, ref, uploadBytes } from "firebase/storage";
 
 // Config cho Firebase
 const firebaseConfig = {
@@ -40,28 +40,34 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const storage = getStorage(app);
 
-// Kiểm tra state của tài khoản (logged-in hay logged-out)
+// Hàm khởi tạo một Promise để kiểm tra state của tài khoản (logged-in hay logged-out)
 function getCurrentUID(auth) {
     return new Promise((resolve, reject) => {
-        const unsubscribe = onAuthStateChanged(auth, (user) => {
-            unsubscribe();
-            resolve(user);
-        }, reject);
+        const unsubscribe = onAuthStateChanged(
+            auth,
+            (user) => {
+                unsubscribe();
+                resolve(user);
+            },
+            reject
+        );
     });
 }
 
-// Nhận hình ảnh được upload từ thiết bị của user
+// Nhận hình ảnh được upload từ thiết bị của người dùng
 function retrieveImages() {
     let fileType = file.type;
     let validType = ["image/jpeg", "image/jpg", "image/png"];
     if (validType.includes(fileType)) {
         fileReader.onload = () => {
+            // Hiển thị hình ảnh đã nhận được vào trong Dropzone
             let fileURL = fileReader.result;
             let imgTag = `<img class="upload-img rounded-lg" src="${fileURL}" alt="">`;
             dropzone.innerHTML = imgTag;
-            let downloadHREF = document.getElementById("download-img");
+
+            // Lấy thông tin về tên file ảnh
             let originalName = file.name.split(".").slice(0, -1).join("."); // Tách phần mở rộng ra khỏi tên file
-            downloadHREF.setAttribute("data-original-name", originalName);
+            downloadImage.setAttribute("data-original-name", originalName);
         };
         fileReader.readAsDataURL(file);
     } else {
@@ -98,8 +104,8 @@ input.addEventListener("change", function () {
 
 // Thực hiện xóa background ảnh
 removeButton.addEventListener("click", () => {
-    // Xử lý loader
-    const loader = document.querySelector(".loader");
+    // Xử lý loader khi nhấn nút Remove Background
+    let loader = document.querySelector(".loader");
     loader.classList.remove("loader--hidden");
     setTimeout(() => {
         loader.classList.add("loader--hidden");
@@ -107,7 +113,8 @@ removeButton.addEventListener("click", () => {
         saveButton.classList.remove("hidden");
     }, 2000);
 
-    formData.append("image_file", file);
+    // Xử lý chuỗi các event khi thực hiện call API
+    formData.append("image_file", file); // Khởi tạo formData
     fetch(API_URL, {
         method: "POST",
         headers: {
@@ -119,10 +126,33 @@ removeButton.addEventListener("click", () => {
         .then((blob) => {
             fileReader.readAsDataURL(blob);
             fileReader.onloadend = () => {
-                let originalName = downloadImage.getAttribute('data-original-name');
-                let newName = originalName ? `${originalName}-background-removed` : 'background-removed';
-                downloadImage.setAttribute('download', newName); // Đặt lại tên cho ảnh đã xóa background
-                downloadImage.setAttribute('href', fileReader.result); // Download ảnh đã xóa background về máy
+                // Download ảnh đã xóa background về máy
+                let originalName = downloadImage.getAttribute("data-original-name");
+                let newName = originalName ? `${originalName}-background-removed` : "background-removed";
+                downloadImage.setAttribute("download", newName); // Đặt lại tên cho ảnh đã xóa background
+                downloadImage.setAttribute("href", fileReader.result);
+
+                // Handle event click vào nút Save to Gallery
+                saveButton.addEventListener("click", async () => {
+                    // Lấy thông về tên file ảnh sau khi xóa nền
+                    const fileExtension = file.name.split(".").pop();
+                    let fileType = file.type;
+                    const newFile = new File([blob], `${newName}.${fileExtension}`, { type: fileType });
+
+                    // Kiểm tra userID và tạo storageRef
+                    const user = await getCurrentUID(auth);
+                    if (user) {
+                        const userID = user.uid;
+                        const storageRef = ref(storage, `${userID}/${newFile.name}`);
+
+                        // Upload ảnh lên Firebase Cloud Storage
+                        uploadBytes(storageRef, newFile).then((snapshot) => {
+                            window.alert("Đã lưu ảnh vào bộ sưu tập cá nhân!");
+                        });
+                    } else {
+                        window.alert("Bạn phải đăng nhập để sử dụng tính năng này!");
+                    }
+                });
             };
         });
 });
