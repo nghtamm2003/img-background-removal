@@ -67,7 +67,7 @@ function retrieveImages() {
 
             // Lấy thông tin về tên file ảnh
             let originalName = file.name.split(".").slice(0, -1).join("."); // Tách phần mở rộng ra khỏi tên file
-            downloadImage.setAttribute("data-original-name", originalName);
+            downloadImage.setAttribute("image-original-name", originalName);
         };
         fileReader.readAsDataURL(file);
     } else {
@@ -127,21 +127,22 @@ removeButton.addEventListener("click", () => {
             fileReader.readAsDataURL(blob);
             fileReader.onloadend = () => {
                 // Download ảnh đã xóa background về máy
-                let originalName = downloadImage.getAttribute("data-original-name");
+                let originalName = downloadImage.getAttribute("image-original-name");
                 let newName = originalName ? `${originalName}-background-removed` : "background-removed";
                 downloadImage.setAttribute("download", newName); // Đặt lại tên cho ảnh đã xóa background
                 downloadImage.setAttribute("href", fileReader.result);
 
                 // Handle event click vào nút Save to Gallery
                 saveButton.addEventListener("click", async () => {
-                    // Lấy thông về tên file ảnh sau khi xóa nền
-                    const fileExtension = file.name.split(".").pop();
-                    let fileType = file.type;
-                    const newFile = new File([blob], `${newName}.${fileExtension}`, { type: fileType });
-
-                    // Kiểm tra userID và tạo storageRef
+                    // Kiểm tra state và khởi tạo userID, storageRef (nếu state là logged-in)
                     const user = await getCurrentUID(auth);
                     if (user) {
+                        // Lấy thông về tên file ảnh sau khi xóa nền
+                        const fileExtension = file.name.split(".").pop();
+                        let fileType = file.type;
+                        const newFile = new File([blob], `${newName}.${fileExtension}`, { type: fileType });
+
+                        // Khởi tạo userID và storageRef
                         const userID = user.uid;
                         const storageRef = ref(storage, `${userID}/${newFile.name}`);
 

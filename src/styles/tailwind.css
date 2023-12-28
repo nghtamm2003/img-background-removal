@@ -3639,6 +3639,11 @@ details.collapse summary::-webkit-details-marker {
   margin-bottom: 0.5rem;
 }
 
+.mx-6 {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
 .-me-2 {
   margin-inline-end: -0.5rem;
 }
@@ -4480,6 +4485,14 @@ details.collapse summary::-webkit-details-marker {
   padding-top: 76px;
 }
 
+.pt-\[145px\] {
+  padding-top: 145px;
+}
+
+.pb-28 {
+  padding-bottom: 7rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -4556,6 +4569,10 @@ details.collapse summary::-webkit-details-marker {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.text-\[26px\] {
+  font-size: 26px;
 }
 
 .font-bold {
@@ -5131,6 +5148,20 @@ details.collapse summary::-webkit-details-marker {
   }
 }
 
+@media (max-width: 425px) {
+  .max-\[425px\]\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+}
+
+@media (min-width: 425px) {
+  .min-\[425px\]\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+}
+
 @media (min-width: 640px) {
   .sm\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -5151,6 +5182,11 @@ details.collapse summary::-webkit-details-marker {
 }
 
 @media (min-width: 768px) {
+  .md\:mx-12 {
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+
   .md\:mb-14 {
     margin-bottom: 3.5rem;
   }
@@ -5238,6 +5274,26 @@ details.collapse summary::-webkit-details-marker {
     padding-bottom: 2rem;
   }
 
+  .md\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .md\:px-14 {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+
+  .md\:px-12 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .md\:py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
   .md\:pb-28 {
     padding-bottom: 7rem;
   }
@@ -5268,6 +5324,14 @@ details.collapse summary::-webkit-details-marker {
 
   .md\:pt-\[72px\] {
     padding-top: 72px;
+  }
+
+  .md\:pt-\[160px\] {
+    padding-top: 160px;
+  }
+
+  .md\:pb-10 {
+    padding-bottom: 2.5rem;
   }
 
   .md\:text-2xl {
@@ -5325,6 +5389,11 @@ details.collapse summary::-webkit-details-marker {
 
   .lg\:top-0 {
     top: 0px;
+  }
+
+  .lg\:mx-\[76px\] {
+    margin-left: 76px;
+    margin-right: 76px;
   }
 
   .lg\:mb-16 {
@@ -5412,6 +5481,16 @@ details.collapse summary::-webkit-details-marker {
     padding-bottom: 2rem;
   }
 
+  .lg\:px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .lg\:px-\[76px\] {
+    padding-left: 76px;
+    padding-right: 76px;
+  }
+
   .lg\:pb-10 {
     padding-bottom: 2.5rem;
   }
@@ -5436,6 +5515,14 @@ details.collapse summary::-webkit-details-marker {
     padding-top: 170px;
   }
 
+  .lg\:pt-\[190px\] {
+    padding-top: 190px;
+  }
+
+  .lg\:pb-12 {
+    padding-bottom: 3rem;
+  }
+
   .lg\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
@@ -5457,6 +5544,11 @@ details.collapse summary::-webkit-details-marker {
 
   .lg\:text-\[64px\] {
     font-size: 64px;
+  }
+
+  .lg\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 
   .lg\:shadow-none {
