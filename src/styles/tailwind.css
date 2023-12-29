@@ -3803,32 +3803,24 @@ details.collapse summary::-webkit-details-marker {
   margin-top: 2rem;
 }
 
-.mt-\[122\.78px\] {
-  margin-top: 122.78px;
+.mt-\[114\.78px\] {
+  margin-top: 114.78px;
 }
 
-.mt-\[125\.78px\] {
-  margin-top: 125.78px;
+.mt-\[115\.78px\] {
+  margin-top: 115.78px;
 }
 
 .mt-auto {
   margin-top: auto;
 }
 
-.mt-\[120\.78px\] {
-  margin-top: 120.78px;
+.mt-\[11\.78px\] {
+  margin-top: 11.78px;
 }
 
-.mt-\[117\.78px\] {
-  margin-top: 117.78px;
-}
-
-.mt-\[118\.78px\] {
-  margin-top: 118.78px;
-}
-
-.mt-\[115\.78px\] {
-  margin-top: 115.78px;
+.mt-\[112\.78px\] {
+  margin-top: 112.78px;
 }
 
 .block {
@@ -4078,10 +4070,6 @@ details.collapse summary::-webkit-details-marker {
   max-width: 24rem;
 }
 
-.max-w-\[105px\] {
-  max-width: 105px;
-}
-
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -4225,6 +4213,10 @@ details.collapse summary::-webkit-details-marker {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.text-ellipsis {
+  text-overflow: ellipsis;
 }
 
 .whitespace-nowrap {
