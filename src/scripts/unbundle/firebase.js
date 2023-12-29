@@ -276,6 +276,7 @@ function displayImagesAndGetDownloadURL(itemRef) {
 
                         // Tạo tag <div> chứa thông tin cho từng file ảnh
                         let itemInformation = document.createElement("div");
+                        itemInformation.classList.add("overflow-hidden", "text-ellipsis", "whitespace-nowrap");
 
                         // Tạo tag <p> chứa tên file ảnh
                         let imageName = document.createElement("p");
