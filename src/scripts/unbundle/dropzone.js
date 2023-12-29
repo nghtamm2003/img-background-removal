@@ -40,6 +40,18 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const storage = getStorage(app);
 
+// Set luật cho Firebase Cloud Storage (Firebase > Storage > Rules)
+/* START
+rules_version = '2';
+service firebase.storage {
+    match /b/{bucket}/o {
+        match /{userId}/{allPaths=**} {
+            allow read, write: if request.auth != null && request.auth.uid == userId;
+        }
+    }
+}
+END */
+
 // Hàm khởi tạo một Promise để kiểm tra state của tài khoản (logged-in hay logged-out)
 function getCurrentUID(auth) {
     return new Promise((resolve, reject) => {
@@ -67,7 +79,7 @@ function retrieveImages() {
 
             // Lấy thông tin về tên file ảnh
             let originalName = file.name.split(".").slice(0, -1).join("."); // Tách phần mở rộng ra khỏi tên file
-            downloadImage.setAttribute("data-original-name", originalName);
+            downloadImage.setAttribute("image-original-name", originalName);
         };
         fileReader.readAsDataURL(file);
     } else {
@@ -102,6 +114,20 @@ input.addEventListener("change", function () {
     retrieveImages();
 });
 
+// Hàm debounce
+function debounce(func, ms) {
+    let timer;
+    return function () {
+        const args = arguments;
+        const context = this;
+
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(() => {
+            func.apply(context, args);
+        }, ms);
+    };
+}
+
 // Thực hiện xóa background ảnh
 removeButton.addEventListener("click", () => {
     // Xử lý loader khi nhấn nút Remove Background
@@ -127,32 +153,36 @@ removeButton.addEventListener("click", () => {
             fileReader.readAsDataURL(blob);
             fileReader.onloadend = () => {
                 // Download ảnh đã xóa background về máy
-                let originalName = downloadImage.getAttribute("data-original-name");
+                let originalName = downloadImage.getAttribute("image-original-name");
                 let newName = originalName ? `${originalName}-background-removed` : "background-removed";
                 downloadImage.setAttribute("download", newName); // Đặt lại tên cho ảnh đã xóa background
                 downloadImage.setAttribute("href", fileReader.result);
 
                 // Handle event click vào nút Save to Gallery
-                saveButton.addEventListener("click", async () => {
-                    // Lấy thông về tên file ảnh sau khi xóa nền
-                    const fileExtension = file.name.split(".").pop();
-                    let fileType = file.type;
-                    const newFile = new File([blob], `${newName}.${fileExtension}`, { type: fileType });
+                saveButton.addEventListener(
+                    "click",
+                    debounce(async () => {
+                        // Kiểm tra state và khởi tạo userID, storageRef (nếu state là logged-in)
+                        const user = await getCurrentUID(auth);
+                        if (user) {
+                            // Lấy thông về tên file ảnh sau khi xóa nền
+                            const fileExtension = file.name.split(".").pop();
+                            let fileType = file.type;
+                            const newFile = new File([blob], `${newName}.${fileExtension}`, { type: fileType });
 
-                    // Kiểm tra userID và tạo storageRef
-                    const user = await getCurrentUID(auth);
-                    if (user) {
-                        const userID = user.uid;
-                        const storageRef = ref(storage, `${userID}/${newFile.name}`);
+                            // Khởi tạo userID và storageRef
+                            const userID = user.uid;
+                            const storageRef = ref(storage, `${userID}/${newFile.name}`);
 
-                        // Upload ảnh lên Firebase Cloud Storage
-                        uploadBytes(storageRef, newFile).then((snapshot) => {
-                            window.alert("Đã lưu ảnh vào bộ sưu tập cá nhân!");
-                        });
-                    } else {
-                        window.alert("Bạn phải đăng nhập để sử dụng tính năng này!");
-                    }
-                });
+                            // Upload ảnh lên Firebase Cloud Storage
+                            uploadBytes(storageRef, newFile).then((snapshot) => {
+                                window.alert("Đã lưu ảnh vào bộ sưu tập cá nhân!");
+                            });
+                        } else {
+                            window.alert("Bạn phải đăng nhập để sử dụng tính năng này!");
+                        }
+                    }, 5000)
+                );
             };
         });
 });
