@@ -3803,24 +3803,12 @@ details.collapse summary::-webkit-details-marker {
   margin-top: 2rem;
 }
 
-.mt-\[114\.78px\] {
-  margin-top: 114.78px;
-}
-
-.mt-\[115\.78px\] {
-  margin-top: 115.78px;
+.mt-\[114px\] {
+  margin-top: 114px;
 }
 
 .mt-auto {
   margin-top: auto;
-}
-
-.mt-\[11\.78px\] {
-  margin-top: 11.78px;
-}
-
-.mt-\[112\.78px\] {
-  margin-top: 112.78px;
 }
 
 .block {
