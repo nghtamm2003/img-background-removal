@@ -14,7 +14,7 @@ document.getElementById("sign-up-button-1").addEventListener("click", (e) => {
 
     // Tạo tag <img> để chứa mã QR sẽ được hiển thị trong modal
     let modalQR = document.createElement("img");
-    modalQR.src = "/src/images/pricing-qr/qr-startup.jpg";
+    modalQR.src = "../images/pricing-qr/qr-startup.jpg";
     modalQR.classList.add("max-h-[60vh]", "max-w-[60vw]", "overflow-hidden");
 
     // Handle event click ra ngoài ảnh (hay click vào backdrop) sẽ ẩn mã QR
@@ -48,7 +48,7 @@ document.getElementById("sign-up-button-2").addEventListener("click", (e) => {
 
     // Tạo tag <img> để chứa mã QR sẽ được hiển thị trong modal
     let modalQR = document.createElement("img");
-    modalQR.src = "/src/images/pricing-qr/qr-teams.jpg";
+    modalQR.src = "../images/pricing-qr/qr-teams.jpg";
     modalQR.classList.add("max-h-[60vh]", "max-w-[60vw]", "overflow-hidden");
 
     // Handle event click ra ngoài ảnh (hay click vào backdrop) sẽ ẩn mã QR
@@ -82,7 +82,7 @@ document.getElementById("sign-up-button-3").addEventListener("click", (e) => {
 
     // Tạo tag <img> để chứa mã QR sẽ được hiển thị trong modal
     let modalQR = document.createElement("img");
-    modalQR.src = "/src/images/pricing-qr/qr-enterprises.jpg";
+    modalQR.src = "../images/pricing-qr/qr-enterprises.jpg";
     modalQR.classList.add("max-h-[60vh]", "max-w-[60vw]", "overflow-hidden");
 
     // Handle event click ra ngoài ảnh (hay click vào backdrop) sẽ ẩn mã QR
