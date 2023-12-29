@@ -269,82 +269,84 @@ function displayImagesAndGetDownloadURL(itemRef) {
         .then((metadata) => {
             getDownloadURL(itemRef)
                 .then((url) => {
-                    // Tạo tag <div> để chứa thông tin file ảnh sử dụng metadata và chứa các nút Preview, Download
-                    let item = document.createElement("div");
-                    item.classList.add("flex", "flex-row", "justify-between", "items-center", "p-2", "border-b", "gap-10");
+                    if (imagesList) {
+                        // Tạo tag <div> để chứa thông tin file ảnh sử dụng metadata và chứa các nút Preview, Download
+                        let item = document.createElement("div");
+                        item.classList.add("flex", "flex-row", "justify-between", "items-center", "p-2", "border-b", "gap-10");
 
-                    // Tạo tag <div> chứa thông tin cho từng file ảnh
-                    let itemInformation = document.createElement("div");
+                        // Tạo tag <div> chứa thông tin cho từng file ảnh
+                        let itemInformation = document.createElement("div");
 
-                    // Tạo tag <p> chứa tên file ảnh
-                    let imageName = document.createElement("p");
-                    imageName.innerText = metadata.name;
-                    imageName.classList.add("[text-wrap:balance]");
+                        // Tạo tag <p> chứa tên file ảnh
+                        let imageName = document.createElement("p");
+                        imageName.innerText = metadata.name;
+                        imageName.classList.add("[text-wrap:balance]");
 
-                    // Tạo tag <p> chứa thông tin thời điểm upload file ảnh
-                    let imageDate = document.createElement("p");
-                    imageDate.innerText = new Date(metadata.updated).toLocaleDateString();
-                    imageDate.classList.add("[text-wrap:balance]");
+                        // Tạo tag <p> chứa thông tin thời điểm upload file ảnh
+                        let imageDate = document.createElement("p");
+                        imageDate.innerText = new Date(metadata.updated).toLocaleDateString();
+                        imageDate.classList.add("[text-wrap:balance]");
 
-                    // Thêm 2 tag <p> imageName và imageDate vào tag <div> itemInformation
-                    itemInformation.appendChild(imageName);
-                    itemInformation.appendChild(imageDate);
+                        // Thêm 2 tag <p> imageName và imageDate vào tag <div> itemInformation
+                        itemInformation.appendChild(imageName);
+                        itemInformation.appendChild(imageDate);
 
-                    // Tạo tag <div> chứa các nút Preview và Download
-                    let buttonsGroup = document.createElement("div");
-                    buttonsGroup.classList.add("flex", "flex-row", "justify-center", "items-center", "space-x-10");
+                        // Tạo tag <div> chứa các nút Preview và Download
+                        let buttonsGroup = document.createElement("div");
+                        buttonsGroup.classList.add("flex", "flex-row", "justify-center", "items-center", "space-x-10");
 
-                    // Tạo tag <button> chứa nút Preview
-                    let previewButton = document.createElement("button");
-                    previewButton.innerText = "Preview";
-                    previewButton.classList.add("text-black", "text-opacity-100", "font-semibold", "hover:text-opacity-60");
-                    previewButton.onclick = () => {
-                        // Tạo tag <div> làm nền mờ cho modal
-                        let backdrop = document.createElement("div");
-                        backdrop.classList.add("fixed", "inset-0", "bg-gray-500", "bg-opacity-40", "flex", "justify-center", "items-center", "z-100");
+                        // Tạo tag <button> chứa nút Preview
+                        let previewButton = document.createElement("button");
+                        previewButton.innerText = "Preview";
+                        previewButton.classList.add("text-black", "text-opacity-100", "font-semibold", "hover:text-opacity-60");
+                        previewButton.onclick = () => {
+                            // Tạo tag <div> làm nền mờ cho modal
+                            let backdrop = document.createElement("div");
+                            backdrop.classList.add("fixed", "inset-0", "bg-gray-500", "bg-opacity-40", "flex", "justify-center", "items-center", "z-100");
 
-                        // Tạo tag <div> để chứa modal - là nơi hiển thị hình ảnh preview
-                        let modal = document.createElement("div");
-                        modal.classList.add("m-4", "p-2", "bg-white", "shadow-2xl", "rounded-lg");
+                            // Tạo tag <div> để chứa modal - là nơi hiển thị hình ảnh preview
+                            let modal = document.createElement("div");
+                            modal.classList.add("m-4", "p-2", "bg-white", "shadow-2xl", "rounded-lg");
 
-                        // Tạo tag <img> để chứa hình ảnh sẽ được hiển thị trong modal
-                        let modalImage = document.createElement("img");
-                        modalImage.src = url;
-                        modalImage.classList.add("max-h-full", "max-w-full", "overflow-hidden");
+                            // Tạo tag <img> để chứa hình ảnh sẽ được hiển thị trong modal
+                            let modalImage = document.createElement("img");
+                            modalImage.src = url;
+                            modalImage.classList.add("max-h-full", "max-w-full", "overflow-hidden");
 
-                        // Handle event click ra ngoài ảnh (hay click vào backdrop) sẽ tắt preview
-                        backdrop.onclick = function (event) {
-                            if (event.target === backdrop) {
-                                backdrop.remove();
-                            }
+                            // Handle event click ra ngoài ảnh (hay click vào backdrop) sẽ tắt preview
+                            backdrop.onclick = function (event) {
+                                if (event.target === backdrop) {
+                                    backdrop.remove();
+                                }
+                            };
+
+                            // Thêm tag <img> modalImage vào tag <div> modal
+                            modal.appendChild(modalImage);
+
+                            // Thêm tag <div> modal vào tag <div> backdrop
+                            backdrop.appendChild(modal);
+
+                            // Thêm tag <div> backdrop vào phần <body> file 'dashboard.html'
+                            document.body.appendChild(backdrop);
                         };
 
-                        // Thêm tag <img> modalImage vào tag <div> modal
-                        modal.appendChild(modalImage);
+                        // Tạo tag <button> chứa nút Download
+                        let downloadButton = document.createElement("button");
+                        downloadButton.innerText = "Download";
+                        downloadButton.classList.add("text-emerald-700", "text-opacity-100", "font-semibold", "hover:text-opacity-60");
+                        downloadButton.onclick = () => window.open(url);
 
-                        // Thêm tag <div> modal vào tag <div> backdrop
-                        backdrop.appendChild(modal);
+                        // Thêm 2 tag <button> previewButton và downloadButton vào tag <div> buttonsGroup
+                        buttonsGroup.appendChild(previewButton);
+                        buttonsGroup.appendChild(downloadButton);
 
-                        // Thêm tag <div> backdrop vào phần <body> file 'dashboard.html'
-                        document.body.appendChild(backdrop);
-                    };
+                        // Thêm 2 tag <div> itemInformation và buttonsGroup vào tag <div> item
+                        item.appendChild(itemInformation);
+                        item.appendChild(buttonsGroup);
 
-                    // Tạo tag <button> chứa nút Download
-                    let downloadButton = document.createElement("button");
-                    downloadButton.innerText = "Download";
-                    downloadButton.classList.add("text-emerald-700", "text-opacity-100", "font-semibold", "hover:text-opacity-60");
-                    downloadButton.onclick = () => window.open(url);
-
-                    // Thêm 2 tag <button> previewButton và downloadButton vào tag <div> buttonsGroup
-                    buttonsGroup.appendChild(previewButton);
-                    buttonsGroup.appendChild(downloadButton);
-
-                    // Thêm 2 tag <div> itemInformation và buttonsGroup vào tag <div> item
-                    item.appendChild(itemInformation);
-                    item.appendChild(buttonsGroup);
-
-                    // Thêm tag <div> item vào tag <div> 'img-list' có sẵn trong 'dashboard.html'
-                    imagesList.appendChild(item);
+                        // Thêm tag <div> item vào tag <div> 'img-list' có sẵn trong 'dashboard.html'
+                        imagesList.appendChild(item);
+                    }
                 })
                 .catch((error) => {
                     console.log(error.message);

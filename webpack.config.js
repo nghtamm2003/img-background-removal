@@ -8,6 +8,7 @@ const config = {
     entry: {
         firebase: "./src/scripts/unbundle/firebase.js",
         dropzone: "./src/scripts/unbundle/dropzone.js",
+        emailjs: "./src/scripts/unbundle/emailjs.js"
     },
     output: {
         path: resolve(__dirname, "./src/scripts"),
