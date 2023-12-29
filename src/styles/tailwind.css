@@ -4648,6 +4648,10 @@ details.collapse summary::-webkit-details-marker {
   padding-bottom: 8rem;
 }
 
+.pb-36 {
+  padding-bottom: 9rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -5536,6 +5540,10 @@ details.collapse summary::-webkit-details-marker {
     padding-top: 72px;
   }
 
+  .md\:pb-32 {
+    padding-bottom: 8rem;
+  }
+
   .md\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
@@ -5667,6 +5675,18 @@ details.collapse summary::-webkit-details-marker {
 
   .lg\:gap-20 {
     gap: 5rem;
+  }
+
+  .lg\:gap-16 {
+    gap: 4rem;
+  }
+
+  .lg\:gap-\[72px\] {
+    gap: 72px;
+  }
+
+  .lg\:gap-\[70px\] {
+    gap: 70px;
   }
 
   .lg\:p-2 {
