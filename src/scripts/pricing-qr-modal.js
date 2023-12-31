@@ -30,7 +30,7 @@ document.getElementById("sign-up-button-1").addEventListener("click", (e) => {
     // Thêm tag <div> modal vào tag <div> backdrop
     backdrop.appendChild(modal);
 
-    // Thêm tag <div> backdrop vào phần <body> file 'dashboard.html'
+    // Thêm tag <div> backdrop vào phần <body> file 'pricing.html'
     document.body.appendChild(backdrop);
 });
 

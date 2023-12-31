@@ -3683,6 +3683,14 @@ details.collapse summary::-webkit-details-marker {
   margin: 1rem;
 }
 
+.m-2 {
+  margin: 0.5rem;
+}
+
+.m-10 {
+  margin: 2.5rem;
+}
+
 .mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
@@ -3811,6 +3819,14 @@ details.collapse summary::-webkit-details-marker {
   margin-top: auto;
 }
 
+.mr-4 {
+  margin-right: 1rem;
+}
+
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+
 .block {
   display: block;
 }
@@ -3895,6 +3911,10 @@ details.collapse summary::-webkit-details-marker {
   max-height: 400px;
 }
 
+.max-h-\[50vh\] {
+  max-height: 50vh;
+}
+
 .max-h-\[60vh\] {
   max-height: 60vh;
 }
@@ -3905,6 +3925,14 @@ details.collapse summary::-webkit-details-marker {
 
 .max-h-full {
   max-height: 100%;
+}
+
+.max-h-\[70vh\] {
+  max-height: 70vh;
+}
+
+.max-h-\[80vh\] {
+  max-height: 80vh;
 }
 
 .min-h-screen {
@@ -4021,6 +4049,10 @@ details.collapse summary::-webkit-details-marker {
   max-width: 50rem;
 }
 
+.max-w-\[50vw\] {
+  max-width: 50vw;
+}
+
 .max-w-\[60vw\] {
   max-width: 60vw;
 }
@@ -4056,6 +4088,18 @@ details.collapse summary::-webkit-details-marker {
 
 .max-w-sm {
   max-width: 24rem;
+}
+
+.max-w-\[40vw\] {
+  max-width: 40vw;
+}
+
+.max-w-\[30vw\] {
+  max-width: 30vw;
+}
+
+.max-w-\[80vw\] {
+  max-width: 80vw;
 }
 
 .flex-1 {
@@ -4195,6 +4239,10 @@ details.collapse summary::-webkit-details-marker {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll;
 }
 
 .truncate {
@@ -4391,6 +4439,10 @@ details.collapse summary::-webkit-details-marker {
   padding: 0.5rem;
 }
 
+.p-4 {
+  padding: 1rem;
+}
+
 .p-6 {
   padding: 1.5rem;
 }
@@ -4401,6 +4453,14 @@ details.collapse summary::-webkit-details-marker {
 
 .p-px {
   padding: 1px;
+}
+
+.p-\[20px\] {
+  padding: 20px;
+}
+
+.p-5 {
+  padding: 1.25rem;
 }
 
 .px-10 {
@@ -4602,6 +4662,10 @@ details.collapse summary::-webkit-details-marker {
 
 .text-center {
   text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
 }
 
 .text-start {
@@ -5321,6 +5385,10 @@ details.collapse summary::-webkit-details-marker {
     max-height: fit-content;
   }
 
+  .md\:max-h-\[80vh\] {
+    max-height: 80vh;
+  }
+
   .md\:w-auto {
     width: auto;
   }
@@ -5344,6 +5412,18 @@ details.collapse summary::-webkit-details-marker {
 
   .md\:max-w-\[600px\] {
     max-width: 600px;
+  }
+
+  .md\:max-w-\[50vw\] {
+    max-width: 50vw;
+  }
+
+  .md\:max-w-\[45vw\] {
+    max-width: 45vw;
+  }
+
+  .md\:max-w-\[60vw\] {
+    max-width: 60vw;
   }
 
   .md\:flex-shrink-\[1\] {
@@ -5481,6 +5561,11 @@ details.collapse summary::-webkit-details-marker {
     line-height: 1.75rem;
   }
 
+  .md\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
   .md\:leading-tight {
     line-height: 1.25;
   }
@@ -5520,6 +5605,10 @@ details.collapse summary::-webkit-details-marker {
     display: none;
   }
 
+  .lg\:max-h-\[80vh\] {
+    max-height: 80vh;
+  }
+
   .lg\:min-h-fit {
     min-height: -moz-fit-content;
     min-height: fit-content;
@@ -5548,6 +5637,10 @@ details.collapse summary::-webkit-details-marker {
   .lg\:max-w-fit {
     max-width: -moz-fit-content;
     max-width: fit-content;
+  }
+
+  .lg\:max-w-\[30vw\] {
+    max-width: 30vw;
   }
 
   .lg\:grid-cols-4 {
@@ -5649,6 +5742,11 @@ details.collapse summary::-webkit-details-marker {
   .lg\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .lg\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
 
   .lg\:shadow-none {
