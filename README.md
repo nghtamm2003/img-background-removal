@@ -1,14 +1,56 @@
-# Nhóm 14 - Đề tài: Website xóa background ảnh sử dụng công nghệ AI
-## Giới thiệu:
-* Trong thời đại công nghệ 4.0, đặc biệt là dạo gần đây với sự thịnh hành của công nghệ AI, chúng đã nhanh chóng trở thành một đề tài nóng hổi và hấp dẫn với cả người trong ngành IT lẫn các ngành khác. AI đã được áp dụng vào rất nhiều các lĩnh vực khác nhau, lợi có, hại có nhưng trên hết những lợi ích mà chúng giúp cho con người là không thể bỏ qua, tiêu biểu có thể kể tới như ChatGPT của OpenAI, GitHub Copilot, Google Bard hay Stable Diffusion,... Và trong ngành nhiếp ảnh hay thiết kế cũng không phải ngoại lệ, việc có 1 "chú" AI có khả năng xử lý hình ảnh và loại bỏ background một cách chính xác và nhanh chóng đã giúp cho những con người của cụ thể ngành nghề này cảm thấy dễ dàng hơn rất nhiều trong công việc và triệt để nâng cao năng suất công việc của bản thân.
+# 🖼️ Website xóa nền ảnh sử dụng API remove.bg
+Bài tập lớn: Thiết kế Web (Học kì 1 - Năm 3 - Học viện Ngân hàng)
 
-## Mô tả:
-1. Landing Page: bao gồm các thông tin cơ bản của website, giới thiệu về các tính năng mà người dùng có thể sử dụng thông qua website, có thể cập nhật các thông tin mới liên quan tới hệ thống trong thời gian sắp tới.
-2. Background Remove Page: là trang tính năng chính của website, nơi người dùng có thể upload hình ảnh và để AI xử lý, tách lọc vật thể ra khỏi background.
-3. Pricing: chi tiết về các gói subscription đối với những người dùng có nhu cầu cao hơn thông thường.
-4. Account: quản lý profile bản thân, đồng thời lưu trữ những bức ảnh đã được xử lý thông qua website.
+## Mục lục
+* [Thông tin cơ bản](#thông-tin-cơ-bản)
+* [Techstack](#techstack)
+* [Yêu cầu](#yêu-cầu)
+* [Hướng dẫn sử dụng](#hướng-dẫn-sử-dụng)
 
-## Website tham khảo:
-* https://www.remove.bg/
-* https://removal.ai/
-* https://www.photoroom.com/tools/background-remover
+## Thông tin cơ bản
+Bố cục website xóa nền ảnh sử dụng API remove.bg bao gồm các trang
+- Landing (hay Homepage): trang chủ của website
+- Background Remove: xóa nền ảnh sử dụng API *[remove.bg](https://remove.bg/)*
+- How to use?: hướng dẫn sử dụng
+- Pricing: thông tin chi tiết các gói subscription đối với những khách hàng quyết định gắn bó lâu dài với dịch vụ
+- Contact us: liên lạc với đội ngũ quản trị hoặc đăng ký newsletter
+- Login/ Logout: sử dụng một trong hai phương thức xác thực e-mail hoặc thông qua tài khoản Google
+- Dashboard: nơi lưu trữ những hình ảnh đã xóa nền của người dùng
+
+**Website tham khảo**
+- [remove.bg](https://www.remove.bg/)
+- [removal.ai](https://removal.ai/)
+- [PhotoRoom](https://www.photoroom.com/tools/background-remover)
+
+**Tác giả**
+- [Nguyễn Hoàng Tâm](https://github.com/nghtamm2003)
+	
+## Techstack
+- HTML + CSS
+- Ngôn ngữ lập trình JavaScript
+- TailwindCSS cùng một số library như [daisyUI](https://daisyui.com/), [Preline](https://preline.co/), [Lucide](https://lucide.dev/)
+- NodeJS
+- Webpack
+- EmailJS
+- Google Firebase
+	
+## Yêu cầu
+- Cài đặt [NodeJS](https://nodejs.org/en/download)
+
+## Hướng dẫn sử dụng
+Cài đặt các dependencies
+```
+npm install
+```
+Build và run project NodeJS
+```
+npm start
+```
+
+**Một số script**
+```
+// Build 'tailwind.css'
+npm css
+// Bundle các file .js (trong src/scripts/unbundle) sử dụng Webpack
+npm build
+```
