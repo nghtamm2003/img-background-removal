@@ -51,6 +51,7 @@ npm start
 ```
 // Build 'tailwind.css'
 npm css
+
 // Bundle các file .js (trong src/scripts/unbundle) sử dụng Webpack
 npm build
 ```
