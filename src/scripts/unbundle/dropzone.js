@@ -130,6 +130,12 @@ function debounce(func, ms) {
 
 // Thực hiện xóa background ảnh
 removeButton.addEventListener("click", () => {
+    // Xử lý trường hợp không upload ảnh
+    if (!file) {
+        window.alert("Vui lòng upload ảnh trước khi thực hiện xóa nền!");
+        return;
+    }
+
     // Xử lý loader khi nhấn nút Remove Background
     let loader = document.querySelector(".loader");
     loader.classList.remove("loader--hidden");
@@ -150,6 +156,12 @@ removeButton.addEventListener("click", () => {
     })
         .then((res) => res.blob())
         .then((blob) => {
+            // Handle event khi không nhận được response từ server
+            if (!blob.size) {
+                alert("Không nhận được kết quả từ server!");
+                return;
+            }
+
             fileReader.readAsDataURL(blob);
             fileReader.onloadend = () => {
                 // Download ảnh đã xóa background về máy
@@ -184,6 +196,10 @@ removeButton.addEventListener("click", () => {
                     }, 5000)
                 );
             };
+        })
+        .catch((err) => {
+            // Handle event khi kết nối API thất bại
+            window.alert("Kết nối API thất bại!");
         });
 });
 
